@@ -28,14 +28,14 @@ In our HTML, we would have the following:
 
 Using this ID, we can create a new instance of the rotor class
 
-  var sampleRotor = new Text_rotor("word-area");   
+	var sampleRotor = new Text_rotor("word-area");   
 
 Then add a few terms (comma separated) using `add_rotors`:
 
-  sampleRotor.add_rotors("Awesomatastic,Superfluenzic,Bodacious");
+	sampleRotor.add_rotors("Awesomatastic,Superfluenzic,Bodacious");
 
 Then just initialize the whole shebang with
 
-  sampleRotor.start_rotor_cycle();
+	sampleRotor.start_rotor_cycle();
   
 I have no idea if I intend on adding more to this tool (I'm sure there are hundreds just like it solving the same problem), I just made it for a random project and thought I'd share.
