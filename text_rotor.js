@@ -5,11 +5,10 @@
 
 	TODO: Add (optional) cursor thingie at the end.
 	TODO: Add ability to remove rotors
-	TODO: Make easy way to add items in the HTML
 */
 
 
-function Text_rotor(static_text, targetdiv){
+function Text_rotor(targetdiv, static_text){
 	thisCore = this;
 	this.rotating_text = [];
 	this.add_rotors = function(rotortext){
@@ -26,7 +25,13 @@ function Text_rotor(static_text, targetdiv){
 		var text_area = document.getElementById(targetdiv);
 		if (position === 0){
 			//Reset Everything if you're at the start of a word
-			text_area.textContent = static_text;
+			if (static_text !== undefined){
+				text_area.textContent = static_text;
+			}
+			else{
+				text_area.textContent = null;
+			}
+
 		}
 		if (word[position] !== undefined){
 			text_area.textContent += word[position];
@@ -49,13 +54,13 @@ function Text_rotor(static_text, targetdiv){
 		}
 		
 	};
+
 }
+
+
+//SAMPLE ROTOR CALL: 
 /*
-
-SAMPLE ROTOR CALL: 
-
-var sampleRotor = new Text_rotor("This rotor is ", "word-area");
-sampleRotor.add_rotors("Awesomatastic, Superfluenzic, Bodacious");
-
+var sampleRotor = new Text_rotor("word-area");
+sampleRotor.add_rotors("Awesomatastic,Superfluenzic,Bodacious");
 sampleRotor.start_rotor_cycle();
 */
